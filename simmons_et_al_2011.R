@@ -52,7 +52,7 @@ plot_subjects <- function(t) {
     ggplot2::scale_x_continuous(name = "Längd (cm)") +
     ggplot2::scale_y_continuous(
       breaks = seq(0, 13),
-      name = "Mängden med denna längd"
+      name = "Antal kvinnor med en viss längd"
     ) +
     ggplot2::labs(
       caption = paste0(
@@ -93,12 +93,12 @@ plot_subjects_by_preference <- function(t) {
     ggplot2::scale_x_continuous(name = "Längd (cm)") +
     ggplot2::scale_y_continuous(
       breaks = seq(0, 10),
-      name = "Mängden med denna längd"
+      name = "Antal kvinnor med en viss längd"
     ) +
     ggplot2::labs(
       caption = paste0(
         # "Number of women: ", n_subjects, ", ",
-        "p-värde: ", format(100.0 * statistics$p.value, digits = 3), "%"
+        "Chansen att skillnaden bara är en slump: ", format(100.0 * statistics$p.value, digits = 3), "%"
       )
     ) +
     ggplot2::scale_color_manual(
