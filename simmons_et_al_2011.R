@@ -51,7 +51,7 @@ plot_subjects <- function(t) {
     ggplot2::geom_line(data = t_ideal, mapping = ggplot2::aes(x = x, y = y), color = "black", lty = "dashed") +
     ggplot2::scale_x_continuous(name = "Längd (cm)") +
     ggplot2::scale_y_continuous(
-      # breaks = seq(0, 13),
+      breaks = seq(0, 13),
       name = "Mängden med denna längd"
     ) +
     ggplot2::labs(
@@ -91,11 +91,14 @@ plot_subjects_by_preference <- function(t) {
     ggplot2::geom_freqpoly(linewidth = 3, binwidth = binwidth) + 
     ggplot2::geom_line(data = t_ideal, mapping = ggplot2::aes(x = x, y = y), color = "black", lty = "dashed") +
     ggplot2::scale_x_continuous(name = "Längd (cm)") +
-    ggplot2::scale_y_continuous(name = "Mängden med denna längd") +
+    ggplot2::scale_y_continuous(
+      breaks = seq(0, 10),
+      name = "Mängden med denna längd"
+    ) +
     ggplot2::labs(
       caption = paste0(
         # "Number of women: ", n_subjects, ", ",
-        "p-value: ", format(100.0 * statistics$p.value, digits = 3), "%"
+        "p-värde: ", format(100.0 * statistics$p.value, digits = 3), "%"
       )
     ) +
     ggplot2::scale_color_manual(
